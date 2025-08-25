@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Updated background gradient from purple/blue to black/green */
+            background: linear-gradient(135deg, #000000 0%, #10ca19 50%, #01ec77 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header h1 {
+            color: white;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(1rem, 4vw, 2rem);
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .welcome-text {
+            text-align: center;
+            color: white;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+        }
+
+        .welcome-text h2 {
+            font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .welcome-text p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            opacity: 0.9;
+        }
+
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 4vw, 2rem);
+            margin-top: 2rem;
+        }
+
+        .function-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: clamp(2rem, 5vw, 2.5rem);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .function-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .function-card:active {
+            transform: scale(0.98);
+        }
+
+        .function-icon {
+            width: clamp(60px, 15vw, 80px);
+            height: clamp(60px, 15vw, 80px);
+            margin: 0 auto 1.5rem;
+            /* Updated icon background gradient from purple/blue to black/green */
+            background: linear-gradient(135deg, #ffffff, #d6d8d6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .function-card:hover .function-icon {
+            transform: scale(1.1);
+            /* Updated hover gradient from purple/blue to green/black */
+            background: linear-gradient(135deg, #eaf1ee, #e0dcdc);
+        }
+
+        .function-title {
+            font-size: clamp(1.3rem, 3vw, 1.5rem);
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .function-description {
+            font-size: clamp(0.9rem, 2.2vw, 1rem);
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        /* Enhanced mobile responsiveness with better breakpoints */
+        @media (max-width: 480px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .functions-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .function-card {
+                min-height: 240px;
+                padding: 1.5rem;
+            }
+
+            .welcome-text {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Added tablet-specific styles */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .functions-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .function-card {
+                min-height: 260px;
+            }
+        }
+
+        /* Added large tablet/small desktop styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .functions-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                max-width: 800px;
+                margin: 2rem auto 0;
+            }
+        }
+
+        /* Added large desktop optimization */
+        @media (min-width: 1200px) {
+            .functions-grid {
+                max-width: 900px;
+                margin: 2rem auto 0;
+            }
+
+            .function-card {
+                min-height: 300px;
+            }
+        }
+
+        /* Added touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .function-card:hover {
+                transform: none;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                background: rgba(255, 255, 255, 0.95);
+            }
+
+            .function-card:hover .function-icon {
+                transform: none;
+                /* Updated touch device icon background to black/green */
+                background: linear-gradient(135deg, #000000, #2d8659);
+            }
+
+            .function-card:active {
+                transform: scale(0.95);
+                background: rgba(255, 255, 255, 1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1> FESTFY</h1>
+    </header>
+
+    <main class="main-content">
+        <div class="admin-container">
+            <div class="welcome-text">
+                <h2>Bem-vindo, Administrador!</h2>
+                <!-- <p>Selecione uma das opções abaixo para gerenciar o sistema</p> -->
+            </div>
+
+            <div class="functions-grid">
+                <a href="./db.php" class="function-card">
+                    <div class="function-icon">
+                        📋
+                    </div>
+                    <h3 class="function-title">Gerenciar Lista</h3>
+                    <p class="function-description">
+                        Visualize, edite e organize todos os itens da lista principal do sistema
+                    </p>
+                </a>
+
+                <a href="#usuarios" class="function-card">
+                    <div class="function-icon">
+                        🎟️
+                    </div>
+                    <h3 class="function-title">Quem Entrou</h3>
+                    <p class="function-description">
+                        Veja quem entrou na festa
+                    </p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 FESTFY</p>
+    </footer>
+
+    <script>
+    
+    
+    </script>
+</body>
+</html>
