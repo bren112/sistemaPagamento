@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-container">
                 <div class="header">
                     <div class="logo-container">
-                        <img src="./revivendo_logo.png" alt="FESTFY" class="logo">
+                        <img src="./hallow.jpg" alt="FESTFY" class="logo">
                     </div>
                     <h1 class="title">
                         <i class="fas fa-qrcode"></i>
@@ -224,7 +224,7 @@ body {
 .shape {
     position: absolute;
     border-radius: 50%;
-    background: linear-gradient(45deg, rgba(120, 119, 198, 0.1), rgba(255, 119, 198, 0.1));
+    background: linear-gradient(45deg, rgba(233, 200, 13, 0.1), rgba(255, 119, 198, 0.1));
     animation: float 6s ease-in-out infinite;
 }
 
@@ -322,7 +322,7 @@ body {
 }
 
 .title i {
-    color: #00d4aa;
+    color: rgb(255, 166, 0);
     font-size: 1.5rem;
 }
 
@@ -354,7 +354,7 @@ body {
 }
 
 .input-group label i {
-    color:rgb(0, 255, 204);
+    color:rgb(255, 166, 0);
     width: 16px;
 }
 
@@ -363,7 +363,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 1rem 1.25rem;
-    color:rgb(0, 255, 204);
+    color:rgb(255, 166, 0);
     font-size: 1rem;
     font-family: inherit;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -376,7 +376,7 @@ body {
 
 .input-field:focus {
     outline: none;
-    border-color: #00d4aa;
+    border-color:rgb(255, 166, 0);
     background: rgba(255, 255, 255, 0.12);
     box-shadow: 
         0 0 0 3px rgba(0, 212, 170, 0.1),
@@ -391,7 +391,7 @@ body {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #00d4aa 0%, #00b894 100%);
+    background: linear-gradient(135deg,rgb(212, 155, 0) 0%,rgb(228, 187, 8) 100%);
     border: none;
     border-radius: 12px;
     padding: 1.25rem 2rem;
@@ -408,7 +408,7 @@ body {
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        0 8px 25px rgba(0, 212, 170, 0.3),
+        0 8px 25px rgba(255, 166, 0, 0.49);
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     margin-top: 0.5rem;
 }
@@ -416,7 +416,7 @@ body {
 .submit-btn:hover {
     transform: translateY(-2px);
     box-shadow: 
-        0 12px 35px rgba(0, 212, 170, 0.4),
+        0 12px 35px rgba(255, 166, 0, 0.56);
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
@@ -455,7 +455,7 @@ body {
 }
 
 .security-info i {
-    color: #00d4aa;
+    color: rgb(255, 166, 0);
 }
 
 /* Responsive Design */

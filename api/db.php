@@ -6,7 +6,7 @@ $limit = 500;
 $offset = 0;
 $pagamentos_aprovados = [];
 
-$data_minima = '2025-07-25';
+$data_minima = '2025-09-04';
 
 do {
     $curl = curl_init();
@@ -101,14 +101,14 @@ foreach ($pagamentos_aprovados as $pagamento) {
             max-width: 960px;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 0 20px #00ff88;
+            box-shadow: 0 0 20px rgb(255, 166, 0);
         }
 
         h2 {
-            color: #00ff88;
+            color:rgb(255, 166, 0);
             text-align: center;
             margin-bottom: 10px;
-            text-shadow: 0 0 8px #00ff88;
+            text-shadow: 0 0 8px rgb(255, 166, 0);
             font-size: 2.5rem;
         }
 
@@ -119,15 +119,15 @@ foreach ($pagamentos_aprovados as $pagamento) {
         }
 
         p.contadores strong {
-            color: #00ff88;
+            color:rgb(255, 166, 0);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             background: #161616;
-            border: 2px solid #00ff88;
-            box-shadow: 0 0 15px #00ff88;
+            border: 2px solid rgb(255, 166, 0);
+            box-shadow: 0 0 15pxrgb(255, 166, 0);
             border-radius: 10px;
             overflow: hidden;
         }
@@ -135,19 +135,19 @@ foreach ($pagamentos_aprovados as $pagamento) {
         th, td {
             padding: 14px;
             text-align: left;
-            border-bottom: 1px solid #00ff88;
+            border-bottom: 1px solid rgb(255, 166, 0);
             font-size: 1rem;
         }
 
         th {
             background-color: #121212;
-            color: #00ff88;
+            color: rgb(255, 166, 0);
             font-weight: bold;
-            text-shadow: 0 0 5px #00ff88;
+            text-shadow: 0 0 5pxrgb(255, 166, 0);
         }
 
         td {
-            color: #a0f8b8;
+            color:rgb(255, 255, 255);
         }
 
         tr:hover {
@@ -159,11 +159,11 @@ foreach ($pagamentos_aprovados as $pagamento) {
             padding: 14px;
             margin-bottom: 25px;
             background-color: #1a1a1a;
-            border: 2px solid #00ff88;
+            border: 2px solidrgb(255, 166, 0);
             border-radius: 8px;
-            color: #00ff88;
+            color: rgb(255, 166, 0);
             font-size: 1.1rem;
-            text-shadow: 0 0 3px #00ff88;
+            text-shadow: 0 0 3pxrgb(255, 166, 0);
         }
 
         @media (max-width: 600px) {
@@ -183,7 +183,7 @@ foreach ($pagamentos_aprovados as $pagamento) {
 
             tr {
                 margin-bottom: 20px;
-                border: 1px solid #00ff88;
+                border: 1px solidrgb(255, 166, 0);
                 border-radius: 10px;
                 padding: 15px;
             }
@@ -206,15 +206,16 @@ foreach ($pagamentos_aprovados as $pagamento) {
                 left: 10px;
                 top: 10px;
                 font-weight: bold;
-                color: #00ff88;
+                color:rgb(255, 166, 0);
                 font-size: 1rem;
-                text-shadow: 0 0 2px #00ff88;
+                text-shadow: 0 0 2px rgb(255, 166, 0);
             }
         }
     </style>
 </head>
 <body>
-    <h2>Pagamentos Aprovados</h2>
+    <h2>Pagamentos Aprovados 💸💸</h2>
+    <br>
 
     <?php if (!empty($pagamentos_aprovados)): ?>
         <p class="contadores">
@@ -223,7 +224,7 @@ foreach ($pagamentos_aprovados as $pagamento) {
         </p>
     <?php endif; ?>
 
-    <input type="text" id="searchInput" placeholder="Buscar por nome ou telefone...">
+    <input type="text" id="searchInput" placeholder="Buscar por nome ou telefone..." style="width: 20pc;">
 
     <script>
     document.getElementById('searchInput').addEventListener('input', function() {
@@ -251,8 +252,8 @@ foreach ($pagamentos_aprovados as $pagamento) {
                     <th>Valor</th>
                     <th>Status</th>
                     <th>Meio de Pagamento</th>
-                    <th>Nome</th>
-                    <th>Telefone</th>
+                    <th>Infos Pagante</th>
+                    <!-- <th>Telefone</th> -->
                 </tr>
             </thead>
             <tbody>
